@@ -1,103 +1,107 @@
+import { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Riseup | Antirasistisk ungdomsengasjement i lokalmiljøet",
+  description:
+    "Riseup er en frivillig organisasjon som driver antirasistiske prosjekter og aktiviteter for ungdom.",
+};
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+    <main className="flex flex-col">
+      {/* Hero */}
+      <section className="relative flex items-center justify-center min-h-[70vh] px-6 text-center bg-gradient-to-br from-rose-500 via-fuchsia-600 to-indigo-600 text-white">
+        <div className="max-w-3xl">
+          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-lg">
+            Sammen <span className="underline decoration-yellow-400">står</span> vi sterkere&nbsp;mot&nbsp;rasisme
+          </h1>
+          <p className="mt-6 text-lg md:text-xl font-light">
+            Riseup samler ungdom for å skape et inkluderende lokalsamfunn gjennom prosjekter, workshops og fritidsaktiviteter.
+          </p>
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="#get-involved"
+              className="px-8 py-3 rounded-full bg-white/90 text-rose-600 font-semibold hover:bg-white transition-colors"
+            >
+              Engasjer deg
+            </Link>
+            <Link
+              href="#projects"
+              className="px-8 py-3 rounded-full border border-white/80 hover:bg-white/10 transition-colors"
+            >
+              Våre prosjekter
+            </Link>
+          </div>
+        </div>
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
+          src="/images/hero-overlay.svg"
+          alt="Dekorativ bakgrunnsgrafikk"
+          width={1600}
+          height={1200}
+          className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-20 pointer-events-none"
           priority
         />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+      </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* About */}
+      <section id="about" className="py-20 px-6 bg-white text-gray-800">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold">Hvem er vi?</h2>
+          <p className="mt-4 text-lg">
+            Riseup drives av frivillige ildsjeler med hjerte for antirasisme. Vi arrangerer alt fra gatemøter og debattkvelder til
+            kreative verksteder og fotballturneringer – alltid med mål om å styrke fellesskap, respekt og muligheter for ungdom.
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      {/* Projects */}
+      <section id="projects" className="py-20 px-6 bg-gray-100">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center">Aktuelle prosjekter</h2>
+          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                title: "Street Art for Unity",
+                desc: "Vi gir ungdom verktøy til å uttrykke antirasisme gjennom gatekunst og muraler i byen.",
+              },
+              {
+                title: "Fotball mot hat",
+                desc: "En inkluderende fotballturnering hvor lagene blandes for å bryte ned fordommer.",
+              },
+              {
+                title: "Speak Up‑workshops",
+                desc: "Retorikk‑ og historiefortelling‑kurs som hjelper unge stemmer å bli hørt.",
+              },
+            ].map(({ title, desc }) => (
+              <div key={title} className="rounded-2xl bg-white shadow-md p-6 flex flex-col">
+                <h3 className="text-xl font-semibold">{title}</h3>
+                <p className="mt-3 text-gray-700 flex-grow">{desc}</p>
+                <Link href="#get-involved" className="mt-6 self-start text-rose-600 hover:underline">
+                  Les mer →
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Call to action */}
+      <section id="get-involved" className="py-20 px-6 bg-rose-600 text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold">Bli frivillig eller støtt oss</h2>
+          <p className="mt-4 text-lg">
+            Uansett om du vil bidra som mentor, delta på arrangementer eller støtte økonomisk – vi trenger deg.
+          </p>
+          <Link
+            href="mailto:kontakt@riseup.no"
+            className="inline-block mt-8 px-10 py-4 bg-white text-rose-600 rounded-full font-semibold hover:bg-yellow-300 hover:text-rose-700 transition-colors"
+          >
+            Kontakt oss
+          </Link>
+        </div>
+      </section>
+    </main>
   );
 }
