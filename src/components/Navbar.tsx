@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X, Home, Info, Phone } from 'lucide-react';
+import { Menu, X, Info, ClipboardList, User, BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Navbar: React.FC = () => {
@@ -28,17 +28,21 @@ const Navbar: React.FC = () => {
 
         {/* Navigation links centered */}
         <div className="hidden md:flex flex-1 justify-center space-x-12 md:space-x-20 lg:space-x-30 xl:space-x-40 2xl:space-x-50">
-          <Link href="/" className="flex items-center text-black hover:text-gray-700 space-x-1">
-            <Home className="h-5 w-5" />
-            <span>Hjem</span>
-          </Link>
           <Link href="/om-oss" className="flex items-center text-black hover:text-gray-700 space-x-1">
             <Info className="h-5 w-5" />
             <span>Om oss</span>
           </Link>
-          <Link href="/prosjekter" className="flex items-center text-black hover:text-gray-700 space-x-1">
-            <Phone className="h-5 w-5" />
-            <span>Prosjekter</span>
+          <Link href="/tiltak" className="flex items-center text-black hover:text-gray-700 space-x-1">
+            <ClipboardList className="h-5 w-5" />
+            <span>Tiltak</span>
+          </Link>
+          <Link href="/mentor" className="flex items-center text-black hover:text-gray-700 space-x-1">
+            <User className="h-5 w-5" />
+            <span>Mentor</span>
+          </Link>
+          <Link href="/kurs" className="flex items-center text-black hover:text-gray-700 space-x-1">
+            <BookOpen className="h-5 w-5" />
+            <span>Kurs</span>
           </Link>
         </div>
 
@@ -65,17 +69,21 @@ const Navbar: React.FC = () => {
       {mobileOpen && (
         <div className="md:hidden bg-transparent">
           <div className="px-4 pt-2 pb-4 space-y-2">
-            <Link href="/" className="flex items-center text-black hover:text-gray-700 space-x-1">
-              <Home className="h-5 w-5" />
-              <span>Hjem</span>
-            </Link>
             <Link href="/om-oss" className="flex items-center text-black hover:text-gray-700 space-x-1">
               <Info className="h-5 w-5" />
               <span>Om oss</span>
             </Link>
-            <Link href="/prosjekter" className="flex items-center text-black hover:text-gray-700 space-x-1">
-              <Phone className="h-5 w-5" />
-              <span>Prosjekter</span>
+            <Link href="/tiltak" className="flex items-center text-black hover:text-gray-700 space-x-1">
+              <ClipboardList className="h-5 w-5" />
+              <span>Tiltak</span>
+            </Link>
+            <Link href="/mentor" className="flex items-center text-black hover:text-gray-700 space-x-1">
+              <User className="h-5 w-5" />
+              <span>Mentor</span>
+            </Link>
+            <Link href="/kurs" className="flex items-center text-black hover:text-gray-700 space-x-1">
+              <BookOpen className="h-5 w-5" />
+              <span>Kurs</span>
             </Link>
             <Button asChild className="w-full">
               <Link href="/kontakt-oss">Kontakt oss</Link>
